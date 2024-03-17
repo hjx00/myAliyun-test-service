@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: test-service
+  datasource:
+    url: jdbc:mysql://8.138.100.155:13309/goDemo?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: huang52131004
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 10
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: testServiceHikariPool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  redis:
+    host: 8.138.100.155
+    port: 16380
+    database: 0
+    password: huang52131004
+    #连接到redis服务器的超时时间，ms
+    timeout: 3000
+  profiles:
+    active: dev
+logging:
+  config: classpath:logback-spring.xml
+mybatis:
+  # 映射文件所在路径
+  mapper-locations: classpath:mappers/*.xml
+  # pojo类所在包路径
+  type-aliases-package: com.huang.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
