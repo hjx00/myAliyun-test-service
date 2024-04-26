@@ -148,7 +148,7 @@
                     <manifest>  
                         <addClasspath>true</addClasspath>  
                         <classpathPrefix>lib/</classpathPrefix>  
-                        <mainClass>com.huang.ServiceApplication</mainClass> <!-- 替换为您的主类 -->  
+                        <mainClass>com.huang.ServiceApplication</mainClass>  
                     </manifest>  
                 </archive>  
             </configuration>  
