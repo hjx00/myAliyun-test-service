@@ -22,4 +22,5 @@ WORKDIR /app
 EXPOSE 8080
 
 # 设置容器启动后的命令
-ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=75.0", "-server", "-XX:+UseG1GC","-XX:MaxGCPauseMillis=200","-Xmx1024m","-Xms1024m","-Xmn384m","-jar","-Dspring.profiles.active=dev", "myAliyun-test-service.jar"]
+# "-Dspring.profiles.active=dev",
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=75.0", "-server", "-XX:+UseG1GC","-XX:MaxGCPauseMillis=200","-Xmx1024m","-Xms1024m","-Xmn384m","-jar", "myAliyun-test-service.jar"]
