@@ -39,7 +39,7 @@ echo "应用：$APP_NAME 正在启动..."
 
 # 构建Docker镜像，注意这里需要指定Dockerfile的位置，否则docker build可能不知道如何构建
 # 例如：docker build -t $APP_NAME . （假设当前目录有Dockerfile）
-docker build -t "$APP_NAME":latest .
+docker buildx build -t "$APP_NAME":latest .
 
 # 运行Docker容器
 # 注意：这里需要确保映射的端口没有被其他容器占用，并且卷挂载的路径是存在的
